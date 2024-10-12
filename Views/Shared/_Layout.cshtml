@@ -1,0 +1,14 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    @await Html.PartialAsync("HeadPartial")
+</head>
+<body>
+    @await Html.PartialAsync("HeaderPartial")
+    <main role="main" class="pb-3">
+            @RenderBody()
+    </main>
+    @await Html.PartialAsync("FooterPartial")
+    @await Html.PartialAsync("ScriptPartial")
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿<div class="d-flex flex-column min-vh-100">
+    <div class="status-bar">
+        <h1 class="text-center">Hello @User.Identity.Name</h1>
+    </div>
+
+
+    <div class="danger-zone text-center text-danger mt-auto">
+
+        <p class="text-break">
+            <span class="d-none d-sm-inline"><--------------------------------------------------</span>
+            Danger-Zone
+            <span class="d-none d-sm-inline">--------------------------------------------------></span>
+        </p>
+
+        <form asp-action="LogOut" asp-controller="Auth" method="post">
+            <button type="submit" class="btn btn-primary">LogOut</button>
+        </form>
+    </div>
+</div>

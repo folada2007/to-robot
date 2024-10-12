@@ -1,0 +1,34 @@
+﻿<div class="container text-center reg">
+    <h3>You can Play?</h3>
+    <div>
+        <a id="yesButton" asp-action="Play" asp-controller="Play">Yes</a>
+        <a id="noButton" href="#">No</a>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Обработчик клика по кнопке "No"
+        document.getElementById('noButton').addEventListener('click', function (event) {
+            event.preventDefault(); // Отменяем стандартное поведение ссылки
+
+            // Меняем текст и href кнопки "No"
+            this.textContent = 'Yes'; // Меняем текст на "Yes"
+            this.id = 'yesButton'; // Обновляем ID кнопки
+            this.href = document.getElementById('yesButton').href; // Сохраняем ссылку кнопки "Yes"
+
+            // Убираем старый обработчик события (если он есть)
+            const oldYesButton = document.getElementById('yesButton');
+            oldYesButton.removeEventListener('click', handleYesClick);
+
+            // Добавляем новый обработчик события для кнопки "Yes"
+            this.addEventListener('click', handleYesClick);
+        });
+
+        // Обработчик для перехода по ссылке "Yes"
+        function handleYesClick(event) {
+            window.location.href = this.href; // Переход на URL
+        }
+    });
+
+</script>

@@ -1,0 +1,46 @@
+﻿@using HackM.Models
+@model RegistrViewModel
+
+<div class="container">
+
+    <h1 class="text-center">Registration</h1>
+
+    <form asp-action="Registration" asp-controller="Auth" method="post">
+        <div class="text-center text-danger " asp-validation-summary="ModelOnly"></div>
+
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label label-color"></label>
+            <span class="d-block text-success" asp-validation-for="Name"></span>
+            <input asp-for="Name" type="text" class="form-control" placeholder="your name">
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label label-color"></label>
+            <span class="d-block text-success" asp-validation-for="Email"></span>
+            <input asp-for="Email" type="email" class="form-control" placeholder="your email">
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Password" class="form-label label-color"></label>
+            <span class="d-block text-success" asp-validation-for="Password"></span>
+            <input asp-for="Password" type="password" class="form-control" placeholder="your password">
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Confirmpassword" class="form-label label-color"></label>
+            <span class="d-block text-success" asp-validation-for="Confirmpassword"></span>
+            <input asp-for="Confirmpassword" type="password" class="form-control" placeholder="blyat idi nahui">
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+
+    </form>
+</div>
+
+    <div class="text-center pt-3">
+        <p>Do you have account? :<a asp-action="Login" asp-controller="Auth">Login</a></p>
+    </div>
+
