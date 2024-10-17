@@ -1,0 +1,27 @@
+﻿@using HackM.Models
+@model RpsViewModel
+
+<div class="container">
+    <div class="PRSContent">
+
+        <h1 class="text-center">Well well well i Like this game</h1>
+
+        @for (var i = 0; i < Model.HeartCount; i++)
+        {
+            <img src="~/img/Heart.png" />
+        }
+
+        <h3 class="text-center">@Model.Message</h3>
+        <h1 class="text-center">@Model.ComputerMove</h1>
+
+        @if (Model.HeartCount < 1) 
+        {
+            @await Html.PartialAsync("ResetFormPartial")
+        }
+        else
+        {
+            @await Html.PartialAsync("UserMoveFormPartial")
+        }
+
+    </div>
+</div>

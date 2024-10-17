@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\HackM.bundle.scp.css",
-      "PackagePath": "staticwebassets\\HackM.bundle.scp.css"
+      "PackagePath": "staticwebassets\\HackM.maal0hu7fg.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\css\\site.css",
@@ -19,6 +19,10 @@
     {
       "Id": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\fonts\\Jacquarda_Bastarda_9\\OFL.txt",
       "PackagePath": "staticwebassets\\fonts\\Jacquarda_Bastarda_9\\OFL.txt"
+    },
+    {
+      "Id": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\img\\Heart.png",
+      "PackagePath": "staticwebassets\\img\\Heart.png"
     },
     {
       "Id": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\js\\site.js",
@@ -251,6 +255,10 @@
     {
       "Id": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.HackM.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.HackM.Microsoft.AspNetCore.StaticWebAssets.props",

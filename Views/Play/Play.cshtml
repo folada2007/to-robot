@@ -1,10 +1,13 @@
-﻿<div class="container">
-    <div class="content text-center">
+﻿
+<div class="container">
+
+    <div class="content-play text-center ">
         <h1>Oh perfectly!!</h1>
         <h2>What shall we play??</h2>
     </div>
 
-    <form asp-action="" asp-controller="Play" method="post">
+    <form class="d-flex flex-column align-items-center justify-content-center form-center" asp-action="Play" asp-controller="Play" method="post">
         <input type="text" name="gameName" placeholder="game..." />
+        <button type="submit">clickme</button>
     </form>
 </div>
