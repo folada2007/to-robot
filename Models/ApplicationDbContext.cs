@@ -11,7 +11,7 @@ namespace HackM.Models
         {
 
         }
-
+        public DbSet<StaticDb> staticsDb { get; set; }
         public DbSet<GameDb> gamesDb { get; set; }
     }
 }

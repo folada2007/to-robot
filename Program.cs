@@ -6,6 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<IStatisticFactory, StatisticFactory>();
+builder.Services.AddScoped<ICreateStatistic, CreateStatistic>();
+builder.Services.AddScoped<IStatistics, Statistics>();
 builder.Services.AddScoped<IMessageFactory, MessageFactory>();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();

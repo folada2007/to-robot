@@ -52,13 +52,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\HackM.maal0hu7fg.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Xqu6/22VnDxFyhmYdEUCVQ8xlJxYpb662UvIcwo08J8="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1129"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Xqu6/22VnDxFyhmYdEUCVQ8xlJxYpb662UvIcwo08J8=\u0022"},{"Name":"Last-Modified","Value":"Thu, 17 Oct 2024 10:38:55 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1129"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Xqu6/22VnDxFyhmYdEUCVQ8xlJxYpb662UvIcwo08J8=\u0022"},{"Name":"Last-Modified","Value":"Fri, 18 Oct 2024 13:19:14 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/HackM/HackM.maal0hu7fg.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\HackM.maal0hu7fg.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"maal0hu7fg"},{"Name":"integrity","Value":"sha256-Xqu6/22VnDxFyhmYdEUCVQ8xlJxYpb662UvIcwo08J8="},{"Name":"label","Value":"_content/HackM/HackM.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1129"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Xqu6/22VnDxFyhmYdEUCVQ8xlJxYpb662UvIcwo08J8=\u0022"},{"Name":"Last-Modified","Value":"Thu, 17 Oct 2024 10:38:55 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1129"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Xqu6/22VnDxFyhmYdEUCVQ8xlJxYpb662UvIcwo08J8=\u0022"},{"Name":"Last-Modified","Value":"Fri, 18 Oct 2024 13:19:14 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/HackM/img/Heart.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\Heart.png'))</AssetFile>

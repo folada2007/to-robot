@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[1.13.0, )"
             },
+            "System.Formats.Asn1": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
             "microsoft.aspnetcore.identity.entityframeworkcore": {
               "target": "Package",
               "version": "[8.0.10, )"

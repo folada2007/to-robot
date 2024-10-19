@@ -1,9 +1,12 @@
 ﻿using HackM.Models;
 using HackM.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace HackM.Controllers
 {
+    [Authorize]
     public class PlayController : Controller
     {
         private readonly IHealth _health;
@@ -14,12 +17,15 @@ namespace HackM.Controllers
 
         private readonly IMessageFactory _messageFactory;
 
-        public PlayController(IGameValid gameValid, IHealth health, IRPSGame rPSGame, IMessageFactory messageFactory)
+        private readonly IStatistics _statistics;
+
+        public PlayController(IGameValid gameValid, IHealth health, IRPSGame rPSGame, IMessageFactory messageFactory, IStatistics statistics)
         {
             _messageFactory = messageFactory;
             _gameValid = gameValid;
             _health = health;
             _RPSGame = rPSGame;
+            _statistics = statistics;
         }
 
         public IActionResult Index()
@@ -61,7 +67,7 @@ namespace HackM.Controllers
         }
 
         [HttpPost]
-        public IActionResult RPS(string playerMove)
+        public async Task<IActionResult> RPS(string playerMove)
         {
             
             if (Enum.TryParse<RPSMove>(playerMove, true, out RPSMove user)) 
@@ -74,13 +80,18 @@ namespace HackM.Controllers
 
                 if (result == "Lose") 
                 {
+                   
                     _health.LoseHeart();
                     heart = _health.GetHealth();
                     HttpContext.Session.SetInt32("Heart", heart);
                 }
-
-                if (!_health.IsAlive()) 
+                
+                if (!_health.IsAlive())
                 {
+                    string id = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                    await _statistics.AddLoseAsync(id);
+
                     return RedirectToAction("RPS");
                 }
 

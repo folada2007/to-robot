@@ -1,8 +1,12 @@
-﻿<div class="d-flex flex-column min-vh-100">
+﻿@using HackM.Models
+@model StatisticViewModel
+
+
+<div class="d-flex flex-column min-vh-100">
     <div class="status-bar">
         <h1 class="text-center">Hello @User.Identity.Name</h1>
+        <h2 class="text-center">Lose: @Model.LoseCount</h2>
     </div>
-
 
     <div class="danger-zone text-center text-danger mt-auto">
 

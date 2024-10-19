@@ -1,6 +1,5 @@
 ﻿using HackM.Models;
 using HackM.Services.Interfaces;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HackM.Controllers
@@ -8,6 +7,7 @@ namespace HackM.Controllers
     public class AuthController : Controller
     {
         private readonly ICreateUser _createUser;
+
         private readonly IAuthUser _authUser;
 
         public AuthController(ICreateUser createUser, IAuthUser authUser)
@@ -46,13 +46,11 @@ namespace HackM.Controllers
 
                var result = await _authUser.PasswordSignInAsync(login);
 
-                if (result.Succeeded)
+                if (!result.Succeeded)
                 {
-                    Console.WriteLine($"Аутентификация успешна: {User.Identity.Name}");
+                    ModelState.AddModelError(string.Empty, "User not found");
                 }
 
-                Console.WriteLine($"Неуспешно:{result}");
-                return RedirectToAction("Index","Home");
             }
 
             return View();
