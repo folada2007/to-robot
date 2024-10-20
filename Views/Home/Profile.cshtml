@@ -6,6 +6,9 @@
     <div class="status-bar">
         <h1 class="text-center">Hello @User.Identity.Name</h1>
         <h2 class="text-center">Lose: @Model.LoseCount</h2>
+        <h2 class="text-center">Win: @Model.WinCount</h2>
+
+        <a asp-action="DropStat" asp-controller="Home" type="submit" class="reset-statistic">Drop?</a>
     </div>
 
     <div class="danger-zone text-center text-danger mt-auto">

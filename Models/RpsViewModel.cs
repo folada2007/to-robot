@@ -5,5 +5,6 @@
         public string Message { get; set; }
         public string ComputerMove { get; set; }
         public int HeartCount { get; set; }
+        public int Streak {  get; set; }
     }
 }

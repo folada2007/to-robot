@@ -11,9 +11,9 @@ namespace HackM.Controllers
     {
         private readonly IHealth _health;
 
-        private readonly IGameValid _gameValid;
+        private readonly IGameValid _gameValid; //well well well zamena na servic igr
 
-        private readonly IRPSGame _RPSGame;
+        private readonly IRPSGame _RPSGame; //well well well zamena na servic igr
 
         private readonly IMessageFactory _messageFactory;
 
@@ -69,38 +69,68 @@ namespace HackM.Controllers
         [HttpPost]
         public async Task<IActionResult> RPS(string playerMove)
         {
-            
-            if (Enum.TryParse<RPSMove>(playerMove, true, out RPSMove user)) 
+            if (!Enum.TryParse<RPSMove>(playerMove, true, out RPSMove user)) 
             {
-                int heart = HttpContext.Session.GetInt32("Heart") ?? _health.GetHealth();
-
-                var ComputerMove = _RPSGame.ComputerMove();
-                
-                var result = _RPSGame.IsWin(user, ComputerMove) ? "Win" : "Lose";
-
-                if (result == "Lose") 
-                {
-                   
-                    _health.LoseHeart();
-                    heart = _health.GetHealth();
-                    HttpContext.Session.SetInt32("Heart", heart);
-                }
-                
-                if (!_health.IsAlive())
-                {
-                    string id = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-                    await _statistics.AddLoseAsync(id);
-
-                    return RedirectToAction("RPS");
-                }
-
-                var MessageForUSer = _messageFactory.messageFactory(result,ComputerMove.ToString(),heart);
-
-                return View(MessageForUSer);
+                return Content("Эту ошибку невозможно получить если у тебя это вышло ты бог");
             }
 
-            return Content("Эту ошибку невозможно получить если у тебя это вышло ты бог");
+            string id = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var ComputerMove = _RPSGame.ComputerMove();
+
+            var result = _RPSGame.IsWin(user, ComputerMove) ? "Win" : "Lose";
+
+            switch (result)
+            {
+                case "Win":
+                    await WinHandler(id);
+                    break;
+
+                case "Lose":
+                    LoseHandler();
+                    break;
+            }
+
+            if (!_health.IsAlive())
+            {
+                await _statistics.AddLoseAsync(id);
+                return RedirectToAction("RPS");
+            }
+
+            var stateGame = StateGame();
+
+            var MessageForUSer = _messageFactory.messageFactory(result, ComputerMove.ToString(), stateGame.heart, stateGame.streak);
+
+            return View(MessageForUSer);
+
+        }
+
+        private (int heart, int streak) StateGame() 
+        {
+            int heart = HttpContext.Session.GetInt32("Heart") ?? _health.GetHealth();
+            int streak = HttpContext.Session.GetInt32("Streak") ?? _health.GetStreak();
+
+            return (heart,streak);
+        }
+
+
+        private async Task WinHandler(string id) 
+        {
+            await _statistics.AddWinAsync(id);
+            _health.AddStreak();
+            int streakCount = _health.GetStreak();
+            HttpContext.Session.SetInt32("Streak", streakCount);
+        }
+
+        private void LoseHandler() 
+        {
+            _health.RemoveStreak();
+            int streakCount = _health.GetStreak();
+            HttpContext.Session.SetInt32("Streak", streakCount);
+
+            _health.LoseHeart();
+            int heart = _health.GetHealth();
+            HttpContext.Session.SetInt32("Heart", heart);
         }
 
         [HttpPost]

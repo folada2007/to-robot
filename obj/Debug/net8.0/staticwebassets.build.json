@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Xf2EQ/n8mnal4SNUtNvkEHMOU236soH77xCJgUB8/H4=",
+  "Hash": "jyBQvtECbTefI0HmruD+AewsKy9I1gbx/lz9kJoeNDw=",
   "Source": "HackM",
   "BasePath": "_content/HackM",
   "Mode": "Default",
@@ -162,6 +162,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Heart.png"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\img\\vecteezy_white-circle-frame_2169.png",
+      "SourceId": "HackM",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\",
+      "BasePath": "_content/HackM",
+      "RelativePath": "img/vecteezy_white-circle-frame_2169#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "wao4trxdpv",
+      "Integrity": "CC25KmLyrcBJmJt1JerQACOwX6zbISxLrKBIN4WY6Mg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\vecteezy_white-circle-frame_2169.png"
     },
     {
       "Identity": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\js\\site.js",
@@ -1954,6 +1975,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-maALKYwtyT79GNYRE5S/tB2tm82+3yuEpkawgaQlDhs="
+        }
+      ]
+    },
+    {
+      "Route": "img/vecteezy_white-circle-frame_2169.png",
+      "AssetFile": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\img\\vecteezy_white-circle-frame_2169.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4379"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CC25KmLyrcBJmJt1JerQACOwX6zbISxLrKBIN4WY6Mg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Oct 2024 11:15:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-CC25KmLyrcBJmJt1JerQACOwX6zbISxLrKBIN4WY6Mg="
+        }
+      ]
+    },
+    {
+      "Route": "img/vecteezy_white-circle-frame_2169.wao4trxdpv.png",
+      "AssetFile": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\img\\vecteezy_white-circle-frame_2169.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4379"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CC25KmLyrcBJmJt1JerQACOwX6zbISxLrKBIN4WY6Mg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Oct 2024 11:15:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wao4trxdpv"
+        },
+        {
+          "Name": "label",
+          "Value": "img/vecteezy_white-circle-frame_2169.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-CC25KmLyrcBJmJt1JerQACOwX6zbISxLrKBIN4WY6Mg="
         }
       ]
     },

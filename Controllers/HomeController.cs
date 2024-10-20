@@ -1,4 +1,3 @@
-using HackM.Models;
 using HackM.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -28,5 +27,12 @@ public class HomeController : Controller
         var LoseCount = await _statistic.GetStatisticAsync(id);
 
         return View(LoseCount);
+    }
+
+    public async Task<IActionResult> DropStat() 
+    {
+        await _statistic.DropStat();
+
+        return RedirectToAction("Index");
     }
 }

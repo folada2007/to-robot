@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\img\\Heart.png"
     },
     {
+      "Id": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\img\\vecteezy_white-circle-frame_2169.png",
+      "PackagePath": "staticwebassets\\img\\vecteezy_white-circle-frame_2169.png"
+    },
+    {
       "Id": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

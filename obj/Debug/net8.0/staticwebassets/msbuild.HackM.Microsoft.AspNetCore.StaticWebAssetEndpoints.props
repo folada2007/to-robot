@@ -72,6 +72,18 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"rn1opaqy0r"},{"Name":"integrity","Value":"sha256-maALKYwtyT79GNYRE5S/tB2tm82\u002B3yuEpkawgaQlDhs="},{"Name":"label","Value":"_content/HackM/img/Heart.png"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4615"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022maALKYwtyT79GNYRE5S/tB2tm82\u002B3yuEpkawgaQlDhs=\u0022"},{"Name":"Last-Modified","Value":"Tue, 15 Oct 2024 13:38:52 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/HackM/img/vecteezy_white-circle-frame_2169.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\vecteezy_white-circle-frame_2169.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-CC25KmLyrcBJmJt1JerQACOwX6zbISxLrKBIN4WY6Mg="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"4379"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022CC25KmLyrcBJmJt1JerQACOwX6zbISxLrKBIN4WY6Mg=\u0022"},{"Name":"Last-Modified","Value":"Sun, 20 Oct 2024 11:15:23 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/HackM/img/vecteezy_white-circle-frame_2169.wao4trxdpv.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\vecteezy_white-circle-frame_2169.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wao4trxdpv"},{"Name":"integrity","Value":"sha256-CC25KmLyrcBJmJt1JerQACOwX6zbISxLrKBIN4WY6Mg="},{"Name":"label","Value":"_content/HackM/img/vecteezy_white-circle-frame_2169.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4379"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022CC25KmLyrcBJmJt1JerQACOwX6zbISxLrKBIN4WY6Mg=\u0022"},{"Name":"Last-Modified","Value":"Sun, 20 Oct 2024 11:15:23 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/HackM/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

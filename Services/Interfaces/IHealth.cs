@@ -6,5 +6,8 @@
         bool IsAlive();
         int GetHealth();
         void ResetHeart();
+        void AddStreak();
+        void RemoveStreak();
+        int GetStreak();
     }
 }

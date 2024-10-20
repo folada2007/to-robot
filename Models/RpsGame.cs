@@ -8,7 +8,6 @@ namespace HackM.Models
         Paper,
         Scissors
     }
-
     public class RpsGame: IRPSGame
     {
         public bool IsWin(RPSMove user, RPSMove computer) 
