@@ -1,30 +1,21 @@
 ﻿using HackM.Services.Interfaces;
+using HackM.Models.Enums;
 
 namespace HackM.Models
 {
-    public enum RPSMove
-    {
-        Rock,
-        Paper,
-        Scissors
-    }
+
     public class RpsGame: IRPSGame
     {
-        public bool IsWin(RPSMove user, RPSMove computer) 
+        public bool AddPoint(RPSMove user, RPSMove computer) 
         {
             if (user == computer)
             {
                 return true;
             }
 
-            else if (user == RPSMove.Scissors && computer == RPSMove.Paper ||
+            return (user == RPSMove.Scissors && computer == RPSMove.Paper ||
                 user == RPSMove.Paper && computer == RPSMove.Rock ||
-                user == RPSMove.Rock && computer == RPSMove.Scissors) 
-            {
-                return true;
-            }
-
-            return false;
+                user == RPSMove.Rock && computer == RPSMove.Scissors);
         }
 
         public RPSMove ComputerMove() 

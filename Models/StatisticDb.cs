@@ -1,6 +1,6 @@
 ﻿namespace HackM.Models
 {
-    public class StaticDb
+    public class StatisticDb
     {
         public string Id { get; set; }
         public int LoseCount { get; set; } = 0;

@@ -6,16 +6,22 @@
 
         <h1 class="text-center">Well well well i Like this game</h1>
 
-        @for (var i = 0; i < Model.HeartCount; i++)
-        {
-            <img src="~/img/Heart.png" />
-        }
+        <div class="heart-content">
+            @for (var i = 0; i < Model.HeartCount; i++)
+            {
+                <img src="~/img/Heart.png" />
+            }
+        </div>
+      
+        <div class="streak-content">
+            <h4>Streak :@Model.Streak</h4>
+        </div>
 
-        <h4>@Model.Streak</h4>
-
-        <h3 class="text-center">@Model.Message</h3>
-
-        <h1 class="text-center">@Model.ComputerMove</h1>
+        <div class="text-center message-content">
+            <h3>@Model.Message</h3>
+            <h1>@Model.ComputerMove</h1>
+        </div>
+        
 
         @if (Model.HeartCount < 1) 
         {

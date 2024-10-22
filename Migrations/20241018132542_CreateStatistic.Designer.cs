@@ -46,7 +46,7 @@ namespace HackM.Migrations
                     b.ToTable("gamesDb");
                 });
 
-            modelBuilder.Entity("HackM.Models.StaticDb", b =>
+            modelBuilder.Entity("HackM.Models.StatisticDb", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");

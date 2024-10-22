@@ -27,7 +27,7 @@ namespace HackM.Models
             await _context.SaveChangesAsync();
         }
 
-        private async Task<StaticDb> FoundUserIdAsync(string Id) 
+        private async Task<StatisticDb> FoundUserIdAsync(string Id) 
         {
            return await _context.staticsDb.FirstOrDefaultAsync(c => c.Id == Id);
         }

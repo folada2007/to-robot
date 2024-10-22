@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HackM.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241019092111_UpdateStatisticSecond")]
-    partial class UpdateStatisticSecond
+    [Migration("20241022094514_renamedb")]
+    partial class renamedb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

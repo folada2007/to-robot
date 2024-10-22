@@ -1,4 +1,4 @@
-﻿using HackM.Models;
+﻿using HackM.Models.Enums;
 using HackM.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,17 +10,21 @@ namespace HackM.Controllers
     public class PlayController : Controller
     {
         private readonly IHealth _health;
-
         private readonly IGameValid _gameValid; //well well well zamena na servic igr
-
         private readonly IRPSGame _RPSGame; //well well well zamena na servic igr
-
         private readonly IMessageFactory _messageFactory;
-
         private readonly IStatistics _statistics;
+        private readonly IDifficultyMode _mode;
 
-        public PlayController(IGameValid gameValid, IHealth health, IRPSGame rPSGame, IMessageFactory messageFactory, IStatistics statistics)
+        public PlayController(
+            IDifficultyMode mode,
+            IGameValid gameValid, 
+            IHealth health, 
+            IRPSGame rPSGame,
+            IMessageFactory messageFactory,
+            IStatistics statistics)
         {
+            _mode = mode;
             _messageFactory = messageFactory;
             _gameValid = gameValid;
             _health = health;
@@ -66,6 +70,19 @@ namespace HackM.Controllers
             return View(HeartCount);
         }
 
+        public IActionResult DifficultyMode() 
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult DifficultyMode(string difficulty)
+        {
+            _mode.SetDifficultyMode(difficulty);
+
+            return RedirectToAction("RPS");
+        }
+
         [HttpPost]
         public async Task<IActionResult> RPS(string playerMove)
         {
@@ -74,19 +91,30 @@ namespace HackM.Controllers
                 return Content("Эту ошибку невозможно получить если у тебя это вышло ты бог");
             }
 
+            var DifficultyMode = HttpContext.Session.GetString("difficulty");
+
+            if (DifficultyMode == null) 
+            {
+                return RedirectToAction("DifficultyMode");
+            }
+
             string id = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             var ComputerMove = _RPSGame.ComputerMove();
 
-            var result = _RPSGame.IsWin(user, ComputerMove) ? "Win" : "Lose";
+            var result = _RPSGame.AddPoint(user, ComputerMove) ? "+1 point" : "-1 heart";
 
             switch (result)
             {
-                case "Win":
-                    await WinHandler(id);
+                case "+1 point":
+                    await AddPoint(id);
+                    if (_mode.IsWin()) 
+                    {
+                        return Content("im gay");
+                    }
                     break;
 
-                case "Lose":
+                case "-1 heart":
                     LoseHandler();
                     break;
             }
@@ -114,7 +142,7 @@ namespace HackM.Controllers
         }
 
 
-        private async Task WinHandler(string id) 
+        private async Task AddPoint(string id) 
         {
             await _statistics.AddWinAsync(id);
             _health.AddStreak();
@@ -133,7 +161,6 @@ namespace HackM.Controllers
             HttpContext.Session.SetInt32("Heart", heart);
         }
 
-        [HttpPost]
         public IActionResult Reset() 
         {
             HttpContext.Session.Remove("Heart");

@@ -4,7 +4,7 @@ namespace HackM.Models
 {
     public class StatisticFactory:IStatisticFactory
     {
-        public StatisticViewModel CreateStatistic(StaticDb UserStat) 
+        public StatisticViewModel CreateStatistic(StatisticDb UserStat) 
         {
             return new StatisticViewModel 
             {

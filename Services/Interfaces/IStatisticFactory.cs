@@ -4,6 +4,6 @@ namespace HackM.Services.Interfaces
 {
     public interface IStatisticFactory
     {
-        StatisticViewModel CreateStatistic(StaticDb UserStat);
+        StatisticViewModel CreateStatistic(StatisticDb UserStat);
     }
 }

@@ -1,10 +1,10 @@
-﻿using HackM.Models;
+﻿using HackM.Models.Enums;
 
 namespace HackM.Services.Interfaces
 {
     public interface IRPSGame
     {
-        bool IsWin(RPSMove user,RPSMove computer);
+        bool AddPoint(RPSMove user,RPSMove computer);
         RPSMove ComputerMove();
     }
 }

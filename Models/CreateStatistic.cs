@@ -14,7 +14,7 @@ namespace HackM.Models
 
         public async Task CreateUserStatisticAsync(string UserId) 
         {
-            var Stat = new StaticDb { Id = UserId };
+            var Stat = new StatisticDb { Id = UserId };
 
             _context.staticsDb.Add(Stat);
 
