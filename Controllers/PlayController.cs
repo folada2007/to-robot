@@ -1,7 +1,9 @@
-﻿using HackM.Models.Enums;
+﻿using HackM.Models;
+using HackM.Models.Enums;
 using HackM.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Security.Claims;
 
 namespace HackM.Controllers
@@ -9,26 +11,17 @@ namespace HackM.Controllers
     [Authorize]
     public class PlayController : Controller
     {
-        private readonly IHealth _health;
-        private readonly IGameValid _gameValid; //well well well zamena na servic igr
-        private readonly IRPSGame _RPSGame; //well well well zamena na servic igr
-        private readonly IMessageFactory _messageFactory;
+        private readonly IGameValid _gameValid;
         private readonly IStatistics _statistics;
-        private readonly IDifficultyMode _mode;
+        private readonly IGameService _gameService;
 
         public PlayController(
-            IDifficultyMode mode,
-            IGameValid gameValid, 
-            IHealth health, 
-            IRPSGame rPSGame,
-            IMessageFactory messageFactory,
+            IGameService gameService,
+            IGameValid gameValid,
             IStatistics statistics)
         {
-            _mode = mode;
-            _messageFactory = messageFactory;
+            _gameService = gameService;
             _gameValid = gameValid;
-            _health = health;
-            _RPSGame = rPSGame;
             _statistics = statistics;
         }
 
@@ -57,17 +50,9 @@ namespace HackM.Controllers
 
         public IActionResult RPS() 
         {
-            int? saveHeart = HttpContext.Session.GetInt32("Heart");
-
-            if (saveHeart == null) 
-            {
-                saveHeart = _health.GetHealth();
-                HttpContext.Session.SetInt32("Heart", saveHeart.Value);
-            }
-
-            var HeartCount = _messageFactory.messageFactory(saveHeart.Value);
-
-            return View(HeartCount);
+            (int?, RpsViewModel) HeartCount = _gameService.HeartInit();
+                
+            return View(HeartCount.Item2);
         }
 
         public IActionResult DifficultyMode() 
@@ -78,7 +63,7 @@ namespace HackM.Controllers
         [HttpPost]
         public IActionResult DifficultyMode(string difficulty)
         {
-            _mode.SetDifficultyMode(difficulty);
+            _gameService.SetDifficultyMode(difficulty);
 
             return RedirectToAction("RPS");
         }
@@ -91,80 +76,56 @@ namespace HackM.Controllers
                 return Content("Эту ошибку невозможно получить если у тебя это вышло ты бог");
             }
 
-            var DifficultyMode = HttpContext.Session.GetString("difficulty");
+            var difficulty = HttpContext.Session.GetString("difficulty");
 
-            if (DifficultyMode == null) 
+            if (difficulty == null) 
             {
                 return RedirectToAction("DifficultyMode");
             }
 
-            string id = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string? id = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var ComputerMove = _RPSGame.ComputerMove();
+            var ComputerMove = _gameService.ComputerMove();
 
-            var result = _RPSGame.AddPoint(user, ComputerMove) ? "+1 point" : "-1 heart";
+            var IsWin = _gameService.IsWin();
 
-            switch (result)
+            var result = _gameService.CreateStreak(user, ComputerMove);
+
+
+            switch (result) 
             {
-                case "+1 point":
-                    await AddPoint(id);
-                    if (_mode.IsWin()) 
+                case true:
+                     _gameService.UpdateStreak();
+
+                    if (IsWin) 
                     {
-                        return Content("im gay");
+                        await _statistics.AddWin(id);
                     }
                     break;
 
-                case "-1 heart":
-                    LoseHandler();
+                case false:
+                    _gameService.LoseHandler();
                     break;
             }
 
-            if (!_health.IsAlive())
+            if (!_gameService.IsAlive())
             {
                 await _statistics.AddLoseAsync(id);
-                return RedirectToAction("RPS");
             }
 
-            var stateGame = StateGame();
+            var stateGame = _gameService.StateGame();
 
-            var MessageForUSer = _messageFactory.messageFactory(result, ComputerMove.ToString(), stateGame.heart, stateGame.streak);
+            var MessageForUSer = _gameService.CreateMessageFactory(result ? "+1 streak":"-1 hp", ComputerMove.ToString(), stateGame.heart, stateGame.streak, IsWin);
 
             return View(MessageForUSer);
 
         }
 
-        private (int heart, int streak) StateGame() 
-        {
-            int heart = HttpContext.Session.GetInt32("Heart") ?? _health.GetHealth();
-            int streak = HttpContext.Session.GetInt32("Streak") ?? _health.GetStreak();
-
-            return (heart,streak);
-        }
-
-
-        private async Task AddPoint(string id) 
-        {
-            await _statistics.AddWinAsync(id);
-            _health.AddStreak();
-            int streakCount = _health.GetStreak();
-            HttpContext.Session.SetInt32("Streak", streakCount);
-        }
-
-        private void LoseHandler() 
-        {
-            _health.RemoveStreak();
-            int streakCount = _health.GetStreak();
-            HttpContext.Session.SetInt32("Streak", streakCount);
-
-            _health.LoseHeart();
-            int heart = _health.GetHealth();
-            HttpContext.Session.SetInt32("Heart", heart);
-        }
-
         public IActionResult Reset() 
         {
             HttpContext.Session.Remove("Heart");
-            _health.ResetHeart();
+            HttpContext.Session.Remove("Streak");
+            _gameService.ResetHeart();
             return RedirectToAction("RPS");
         }
     }

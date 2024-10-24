@@ -22,7 +22,7 @@ namespace HackM.Models
                 int difficultyCount = GetDifficultyCount(difficultyResult);
                 int streak = session.GetInt32("Streak") ?? 0;
 
-                return streak >= difficultyCount;
+                return streak == difficultyCount;
             }
 
             return false;

@@ -4,10 +4,11 @@ namespace HackM.Models
 {
     public class MessageFactory:IMessageFactory
     {
-        public RpsViewModel messageFactory(string Message,string ComputerMove, int HeartCount,int Streak) 
+        public RpsViewModel CreateMessageFactory(string Message,string ComputerMove, int HeartCount,int Streak, bool IsWin) 
         {
             return new RpsViewModel
             {
+                UserWin = IsWin,
                 Streak = Streak,
                 Message = Message,
                 ComputerMove = ComputerMove,
@@ -15,7 +16,7 @@ namespace HackM.Models
             };
         }
 
-        public RpsViewModel messageFactory(int HeartCount)
+        public RpsViewModel CreateMessageFactory(int HeartCount)
         {
             return new RpsViewModel
             {

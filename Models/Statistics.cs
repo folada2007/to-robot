@@ -32,7 +32,7 @@ namespace HackM.Models
            return await _context.staticsDb.FirstOrDefaultAsync(c => c.Id == Id);
         }
 
-        public async Task AddWinAsync(string Id) 
+        public async Task AddWin(string Id) 
         {
             var UserStat = await FoundUserIdAsync(Id);
 

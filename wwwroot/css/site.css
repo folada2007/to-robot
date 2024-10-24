@@ -89,7 +89,7 @@ body {
     flex-grow:1;
 }
 
-.reg, .form-center {
+.reg{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -102,4 +102,25 @@ body {
 
 .form-center {
     margin-top:40px;
+}
+
+
+.User-bar, .heart-content {
+    border: white,dashed,1px;
+    max-width: max-content;
+    min-width: 105px;
+}
+
+.User-bar {
+    min-height: 140px;
+}
+
+.streak-content {
+    max-width: 224px;
+}
+
+.computer-bar {
+    border: white,dashed,1px;
+    min-width: 224px;
+    min-height:140px;
 }

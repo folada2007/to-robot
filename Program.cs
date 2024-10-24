@@ -6,12 +6,14 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<IGameService,GameService>();
 builder.Services.AddScoped<IDifficultyMode,DifficultyMode>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<IStatisticFactory, StatisticFactory>();
 builder.Services.AddScoped<ICreateStatistic, CreateStatistic>();
 builder.Services.AddScoped<IStatistics, Statistics>();
-builder.Services.AddScoped<IMessageFactory, MessageFactory>();
+builder.Services.AddScoped<IMessageFactory
+    , MessageFactory>();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
 builder.Services.AddScoped<IRPSGame, RpsGame>();
@@ -45,6 +47,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Play}/{action=Rps}/{id?}");
 
 app.Run();

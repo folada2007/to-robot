@@ -2,35 +2,54 @@
 @model RpsViewModel
 
 <div class="container">
-    <div class="PRSContent">
+    <h1 class="text-center">Well well well i Like this game</h1>
+    @if (Model.UserWin)
+    {
+        <h1 class="text-center reg">Victory</h1>
+    }
+    <div class="PRSContent d-flex align-items-center justify-content-between">
 
-        <h1 class="text-center">Well well well i Like this game</h1>
 
-        <div class="heart-content">
-            @for (var i = 0; i < Model.HeartCount; i++)
+        <div class="User-bar">
+
+            <div class="heart-content d-flex align-items-center justify-content-center">
+                @for (var i = 0; i < Model.HeartCount; i++)
+                {
+                    <img src="~/img/Heart.png" />
+                }
+            </div>
+
+
+            <div class="streak-content">
+                @if (Model.Streak != 0)
+                {
+                    <h4>Streak :@Model.Streak</h4>
+                }
+            </div>
+
+        </div>
+
+        <div class="computer-bar d-flex align-items-center justify-content-center flex-column">
+
+            <div class="text-center message-content">
+                <h3>@Model.Message</h3>
+                <h3>@Model.ComputerMove</h3>
+               
+            </div>
+
+            @if (Model.HeartCount < 1)
             {
-                <img src="~/img/Heart.png" />
+                @await Html.PartialAsync("RPSLosePartial")
+            }
+            else if (Model.UserWin)
+            {
+                @await Html.PartialAsync("RPSWinPartial")
+            }
+            else
+            {
+                @await Html.PartialAsync("UserMoveFormPartial")
             }
         </div>
-      
-        <div class="streak-content">
-            <h4>Streak :@Model.Streak</h4>
-        </div>
-
-        <div class="text-center message-content">
-            <h3>@Model.Message</h3>
-            <h1>@Model.ComputerMove</h1>
-        </div>
-        
-
-        @if (Model.HeartCount < 1) 
-        {
-            @await Html.PartialAsync("ResetFormPartial")
-        }
-        else
-        {
-            @await Html.PartialAsync("UserMoveFormPartial")
-        }
-
+            
     </div>
 </div>
