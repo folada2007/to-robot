@@ -78,10 +78,7 @@ namespace HackM.Controllers
 
             var difficulty = HttpContext.Session.GetString("difficulty");
 
-            if (difficulty == null) 
-            {
-                return RedirectToAction("DifficultyMode");
-            }
+            if (difficulty == null) return RedirectToAction("DifficultyMode");
 
             string? id = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
@@ -89,18 +86,14 @@ namespace HackM.Controllers
 
             var IsWin = _gameService.IsWin();
 
-            var result = _gameService.CreateStreak(user, ComputerMove);
+            var result = _gameService.WinOrLose(user, ComputerMove);
 
+            if (IsWin) await _statistics.AddWin(id);
 
             switch (result) 
             {
                 case true:
                      _gameService.UpdateStreak();
-
-                    if (IsWin) 
-                    {
-                        await _statistics.AddWin(id);
-                    }
                     break;
 
                 case false:
@@ -108,14 +101,11 @@ namespace HackM.Controllers
                     break;
             }
 
-            if (!_gameService.IsAlive())
-            {
-                await _statistics.AddLoseAsync(id);
-            }
+            if (!_gameService.IsAlive()) await _statistics.AddLoseAsync(id);
 
             var stateGame = _gameService.StateGame();
 
-            var MessageForUSer = _gameService.CreateMessageFactory(result ? "+1 streak":"-1 hp", ComputerMove.ToString(), stateGame.heart, stateGame.streak, IsWin);
+            var MessageForUSer = _gameService.CreateMessageFactory(result ? "+1 streak":"-1 hp", ComputerMove.ToString(), stateGame.heart, stateGame.streak, IsWin,playerMove);
 
             return View(MessageForUSer);
 
@@ -125,6 +115,7 @@ namespace HackM.Controllers
         {
             HttpContext.Session.Remove("Heart");
             HttpContext.Session.Remove("Streak");
+
             _gameService.ResetHeart();
             return RedirectToAction("RPS");
         }

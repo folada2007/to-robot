@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Lllvp6scNMUIWv6A7OwCHBLYjLiK+H9I/5Nt+qgJ/L8=",
+  "Hash": "xem8dfdASd5Ggs+huOGbzBxlSMRS8lrTotOcqvzJBBw=",
   "Source": "HackM",
   "BasePath": "_content/HackM",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "h2ebg8m8k9",
-      "Integrity": "B1RDuAFq+2r5YxKjExhd9/5VEHAQMXU5C0CMDzzONc8=",
+      "Fingerprint": "np8f446isi",
+      "Integrity": "282qNG1YINNo2q5JXebTiXVGFFVrGFe3rREJaQEx7QM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -162,6 +162,69 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Heart.png"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\img\\scissors_jpv07xaac5ep_128.png",
+      "SourceId": "HackM",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\",
+      "BasePath": "_content/HackM",
+      "RelativePath": "img/scissors_jpv07xaac5ep_128#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "f2yrve7746",
+      "Integrity": "yXPzURt3AtTqWgyGPklHegTJc0+Gn6reaHB9nekMex4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\scissors_jpv07xaac5ep_128.png"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\img\\toilet_paper_1q9xf9mjmbhg_128.png",
+      "SourceId": "HackM",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\",
+      "BasePath": "_content/HackM",
+      "RelativePath": "img/toilet_paper_1q9xf9mjmbhg_128#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fpbywl3y90",
+      "Integrity": "PUzpu/fQ7C+GSJQIHJv2Z7H03IlpAE1dm0q8kgoK6SM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\toilet_paper_1q9xf9mjmbhg_128.png"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\img\\tombstone_28is48nfbaek_128.png",
+      "SourceId": "HackM",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\",
+      "BasePath": "_content/HackM",
+      "RelativePath": "img/tombstone_28is48nfbaek_128#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "62984nah8h",
+      "Integrity": "3v9lxaqS9iA4xfh4s4NgyEU9TB4PuyqC/qAhQ7BjEAQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\tombstone_28is48nfbaek_128.png"
     },
     {
       "Identity": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\img\\vecteezy_white-circle-frame_2169.png",
@@ -1415,7 +1478,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2124"
+          "Value": "2623"
         },
         {
           "Name": "Content-Type",
@@ -1423,11 +1486,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"B1RDuAFq+2r5YxKjExhd9/5VEHAQMXU5C0CMDzzONc8=\""
+          "Value": "\"282qNG1YINNo2q5JXebTiXVGFFVrGFe3rREJaQEx7QM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 24 Oct 2024 13:18:34 GMT"
+          "Value": "Fri, 25 Oct 2024 12:08:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1437,12 +1500,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-B1RDuAFq+2r5YxKjExhd9/5VEHAQMXU5C0CMDzzONc8="
+          "Value": "sha256-282qNG1YINNo2q5JXebTiXVGFFVrGFe3rREJaQEx7QM="
         }
       ]
     },
     {
-      "Route": "css/site.h2ebg8m8k9.css",
+      "Route": "css/site.np8f446isi.css",
       "AssetFile": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1452,7 +1515,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2124"
+          "Value": "2623"
         },
         {
           "Name": "Content-Type",
@@ -1460,11 +1523,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"B1RDuAFq+2r5YxKjExhd9/5VEHAQMXU5C0CMDzzONc8=\""
+          "Value": "\"282qNG1YINNo2q5JXebTiXVGFFVrGFe3rREJaQEx7QM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 24 Oct 2024 13:18:34 GMT"
+          "Value": "Fri, 25 Oct 2024 12:08:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1474,7 +1537,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "h2ebg8m8k9"
+          "Value": "np8f446isi"
         },
         {
           "Name": "label",
@@ -1482,7 +1545,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-B1RDuAFq+2r5YxKjExhd9/5VEHAQMXU5C0CMDzzONc8="
+          "Value": "sha256-282qNG1YINNo2q5JXebTiXVGFFVrGFe3rREJaQEx7QM="
         }
       ]
     },
@@ -1975,6 +2038,252 @@
         {
           "Name": "integrity",
           "Value": "sha256-maALKYwtyT79GNYRE5S/tB2tm82+3yuEpkawgaQlDhs="
+        }
+      ]
+    },
+    {
+      "Route": "img/scissors_jpv07xaac5ep_128.f2yrve7746.png",
+      "AssetFile": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\img\\scissors_jpv07xaac5ep_128.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5391"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yXPzURt3AtTqWgyGPklHegTJc0+Gn6reaHB9nekMex4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 25 Oct 2024 09:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "f2yrve7746"
+        },
+        {
+          "Name": "label",
+          "Value": "img/scissors_jpv07xaac5ep_128.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yXPzURt3AtTqWgyGPklHegTJc0+Gn6reaHB9nekMex4="
+        }
+      ]
+    },
+    {
+      "Route": "img/scissors_jpv07xaac5ep_128.png",
+      "AssetFile": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\img\\scissors_jpv07xaac5ep_128.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5391"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yXPzURt3AtTqWgyGPklHegTJc0+Gn6reaHB9nekMex4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 25 Oct 2024 09:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yXPzURt3AtTqWgyGPklHegTJc0+Gn6reaHB9nekMex4="
+        }
+      ]
+    },
+    {
+      "Route": "img/toilet_paper_1q9xf9mjmbhg_128.fpbywl3y90.png",
+      "AssetFile": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\img\\toilet_paper_1q9xf9mjmbhg_128.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3712"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PUzpu/fQ7C+GSJQIHJv2Z7H03IlpAE1dm0q8kgoK6SM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 25 Oct 2024 09:46:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fpbywl3y90"
+        },
+        {
+          "Name": "label",
+          "Value": "img/toilet_paper_1q9xf9mjmbhg_128.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PUzpu/fQ7C+GSJQIHJv2Z7H03IlpAE1dm0q8kgoK6SM="
+        }
+      ]
+    },
+    {
+      "Route": "img/toilet_paper_1q9xf9mjmbhg_128.png",
+      "AssetFile": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\img\\toilet_paper_1q9xf9mjmbhg_128.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3712"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PUzpu/fQ7C+GSJQIHJv2Z7H03IlpAE1dm0q8kgoK6SM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 25 Oct 2024 09:46:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PUzpu/fQ7C+GSJQIHJv2Z7H03IlpAE1dm0q8kgoK6SM="
+        }
+      ]
+    },
+    {
+      "Route": "img/tombstone_28is48nfbaek_128.62984nah8h.png",
+      "AssetFile": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\img\\tombstone_28is48nfbaek_128.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2711"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3v9lxaqS9iA4xfh4s4NgyEU9TB4PuyqC/qAhQ7BjEAQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 25 Oct 2024 09:43:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "62984nah8h"
+        },
+        {
+          "Name": "label",
+          "Value": "img/tombstone_28is48nfbaek_128.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3v9lxaqS9iA4xfh4s4NgyEU9TB4PuyqC/qAhQ7BjEAQ="
+        }
+      ]
+    },
+    {
+      "Route": "img/tombstone_28is48nfbaek_128.png",
+      "AssetFile": "C:\\Users\\ASUS\\source\\repos\\HackM\\HackM\\wwwroot\\img\\tombstone_28is48nfbaek_128.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2711"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3v9lxaqS9iA4xfh4s4NgyEU9TB4PuyqC/qAhQ7BjEAQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 25 Oct 2024 09:43:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3v9lxaqS9iA4xfh4s4NgyEU9TB4PuyqC/qAhQ7BjEAQ="
         }
       ]
     },

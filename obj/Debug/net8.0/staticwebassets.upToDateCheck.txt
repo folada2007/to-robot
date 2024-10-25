@@ -3,6 +3,9 @@ wwwroot\favicon.ico
 wwwroot\fonts\Jacquarda_Bastarda_9\JacquardaBastarda9-Regular.ttf
 wwwroot\fonts\Jacquarda_Bastarda_9\OFL.txt
 wwwroot\img\Heart.png
+wwwroot\img\scissors_jpv07xaac5ep_128.png
+wwwroot\img\toilet_paper_1q9xf9mjmbhg_128.png
+wwwroot\img\tombstone_28is48nfbaek_128.png
 wwwroot\img\vecteezy_white-circle-frame_2169.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css

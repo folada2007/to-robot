@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HackM")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3de4803de926dd4817b157a1bbf58c5acd8cd1bb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+19b131aa88248e268e7601684608d276ac2b9514")]
 [assembly: System.Reflection.AssemblyProductAttribute("HackM")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HackM")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -89,7 +89,7 @@ body {
     flex-grow:1;
 }
 
-.reg{
+.reg, .form-center {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -108,6 +108,9 @@ body {
 .User-bar, .heart-content {
     border: white,dashed,1px;
     max-width: max-content;
+}
+
+.heart-content {
     min-width: 105px;
 }
 
@@ -121,6 +124,38 @@ body {
 
 .computer-bar {
     border: white,dashed,1px;
-    min-width: 224px;
+    width:224px;
     min-height:140px;
+}
+
+.falling-text {
+    opacity: 0;
+    animation: fall 2s forwards, disappear 2s forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(100%)
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-50%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100%); 
+        opacity: 0;
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0;
+    }
 }

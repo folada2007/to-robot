@@ -6,7 +6,7 @@ namespace HackM.Models
 
     public class RpsGame: IRPSGame
     {
-        public bool CreateStreak(RPSMove user, RPSMove computer) 
+        public bool WinOrLose(RPSMove user, RPSMove computer) 
         {
             if (user == computer)
             {

@@ -7,6 +7,7 @@
     {
         <h1 class="text-center reg">Victory</h1>
     }
+
     <div class="PRSContent d-flex align-items-center justify-content-between">
 
 
@@ -32,13 +33,20 @@
         <div class="computer-bar d-flex align-items-center justify-content-center flex-column">
 
             <div class="text-center message-content">
-                <h3>@Model.Message</h3>
-                <h3>@Model.ComputerMove</h3>
-               
+                @if (Model.Message == "+1 streak") 
+                {
+                    <h3 class="falling-text text-success">@Model.Message</h3>
+                }
+                else
+                {
+                    <h3 class="falling-text text-danger">@Model.Message</h3>
+                }
+                
             </div>
 
             @if (Model.HeartCount < 1)
             {
+                <h1 class="text-center reg">Proebal</h1>
                 @await Html.PartialAsync("RPSLosePartial")
             }
             else if (Model.UserWin)
@@ -50,6 +58,24 @@
                 @await Html.PartialAsync("UserMoveFormPartial")
             }
         </div>
-            
+
+    </div>
+
+
+    <div class="game-content  d-flex align-items-center justify-content-evenly">
+        <div class="Computer-move-pictures">
+            @if(!string.IsNullOrEmpty(Model.ComputerMoveUrl))
+            {
+                <img src="@Url.Content(@Model.ComputerMoveUrl)" alt="Alternate Text" />
+            }
+
+        </div>
+
+        <div class="User-move-pictures">
+            @if (!string.IsNullOrEmpty(Model.UserMoveUrl)) 
+            {
+                <img src="@Url.Content(@Model.UserMoveUrl)" alt="Alternate Text" />
+            }
+        </div>
     </div>
 </div>

@@ -76,9 +76,9 @@ namespace HackM.Models
             _health.LoseHeart();
         }
 
-        public RpsViewModel CreateMessageFactory(string Message,string ComputerMove,int HeartCount,int Streak,bool IsWin) 
+        public RpsViewModel CreateMessageFactory(string Message,string ComputerMove,int HeartCount,int Streak,bool IsWin, string UserMove) 
         {
-            return _MessageFactory.CreateMessageFactory(Message,ComputerMove,HeartCount,Streak,IsWin);
+            return _MessageFactory.CreateMessageFactory(Message,ComputerMove,HeartCount,Streak,IsWin, UserMove);
         }
 
         public bool IsAlive() 
@@ -86,9 +86,9 @@ namespace HackM.Models
             return _health.IsAlive();
         }
 
-        public bool CreateStreak(RPSMove User,RPSMove ComputerMove) 
+        public bool WinOrLose(RPSMove User,RPSMove ComputerMove) 
         {
-            return _RPSGame.CreateStreak(User, ComputerMove);
+            return _RPSGame.WinOrLose(User, ComputerMove);
         }
 
         public RPSMove ComputerMove() 

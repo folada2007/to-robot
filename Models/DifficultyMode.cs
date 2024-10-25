@@ -15,14 +15,14 @@ namespace HackM.Models
         public bool IsWin()
         {
             var session = _contextAccessor.HttpContext.Session;
-            string difficulty = session.GetString("difficulty");
+            string? difficulty = session.GetString("difficulty");
 
             if (Enum.TryParse<DifficultyEnum>(difficulty, true, out DifficultyEnum difficultyResult))
             {
                 int difficultyCount = GetDifficultyCount(difficultyResult);
                 int streak = session.GetInt32("Streak") ?? 0;
 
-                return streak == difficultyCount;
+                return streak >= difficultyCount;
             }
 
             return false;

@@ -4,10 +4,20 @@ namespace HackM.Models
 {
     public class MessageFactory:IMessageFactory
     {
-        public RpsViewModel CreateMessageFactory(string Message,string ComputerMove, int HeartCount,int Streak, bool IsWin) 
+        private readonly IImageUrlRPS _imageUrlRPS;
+
+        public MessageFactory(IImageUrlRPS imageUrlRPS)
+        {
+            _imageUrlRPS = imageUrlRPS;
+        }
+
+        public RpsViewModel CreateMessageFactory(string Message,string ComputerMove, int HeartCount,int Streak, bool IsWin, string UserMove) 
         {
             return new RpsViewModel
             {
+                UserMoveUrl = _imageUrlRPS.GetImageUrl(UserMove),
+                ComputerMoveUrl = _imageUrlRPS.GetImageUrl(ComputerMove),
+                UserMove = UserMove,
                 UserWin = IsWin,
                 Streak = Streak,
                 Message = Message,

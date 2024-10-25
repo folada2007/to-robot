@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<IImageUrlRPS,ImageUrlRPS>();
 builder.Services.AddScoped<IGameService,GameService>();
 builder.Services.AddScoped<IDifficultyMode,DifficultyMode>();
 builder.Services.AddHttpContextAccessor();

@@ -14,9 +14,9 @@ namespace HackM.Services.Interfaces
         int GetHealth();
         void ResetHeart();
         void LoseHeart();
-        RpsViewModel CreateMessageFactory(string Message, string ComputerMove, int HeartCount, int Streak, bool IsWin);
+        RpsViewModel CreateMessageFactory(string Message, string ComputerMove, int HeartCount, int Streak, bool IsWin,string UserMove);
         bool IsAlive();
-        bool CreateStreak(RPSMove User, RPSMove ComputerMove);
+        bool WinOrLose(RPSMove User, RPSMove ComputerMove);
         RPSMove ComputerMove();
         bool IsWin();
         void UpdateStreak();
